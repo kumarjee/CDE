@@ -1,0 +1,1 @@
+	<img src="<%=request.getContextPath()%>/resources/images/Footer3.png" style="min-width: 100%;" align="left" height="80px"/>

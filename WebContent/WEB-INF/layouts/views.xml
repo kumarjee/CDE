@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="/index" extends="LoginTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/index.jsp" />
+	</definition>
+
+	<definition name="/user/userlogin" extends="LoginTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/user/userlogin.jsp" />
+	</definition>
+	
+	<definition name="/admin/adminlogin" extends="LoginTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/admin/adminlogin.jsp" />
+	</definition>
+	
+	<definition name="/admin/addquestion" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/admin/addquestion.jsp" />
+	</definition>
+	
+	<definition name="/admin/uploadquestion" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/admin/uploadquestion.jsp" />
+	</definition>
+	
+	<definition name="admin/questionlist" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/admin/questionlist.jsp" />
+	</definition>
+	
+	<definition name="/admin/searchquestion" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/admin/searchquestion.jsp" />
+	</definition>
+	
+	<definition name="/user/selectpaper" extends="LoginTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/user/selectpaper.jsp" />
+	</definition>
+	
+	<definition name="/user/questionpaper" extends="LoginTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/user/questionpaper.jsp" />
+	</definition>
+	
+	<definition name="/user/questionpaperresult" extends="LoginTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/user/questionpaperresult.jsp" />
+	</definition>
+	
+	<definition name="/user/userregistration" extends="LoginTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/user/userregistration.jsp" />
+	</definition>
+	
+</tiles-definitions>
