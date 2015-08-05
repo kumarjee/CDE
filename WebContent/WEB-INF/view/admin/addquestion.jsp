@@ -19,15 +19,15 @@ h2 {font-size:130%; color:#0B0B3B; font-weight:bold; font-family:verdana}
 <form:form commandName="addQuestionForm">
 	<table style="padding-left: 100px; font-family: verdana; font-size: 12px;">
 		<tr>
-			<td><form:label path="languageId">Select Certification :</form:label>
-			<font color="red"> <form:errors path="languageId"></form:errors>
+			<td><form:label path="certificationId">Select Certification :</form:label>
+			<font color="red"> <form:errors path="certificationId"></form:errors>
 			</font></td>
 		</tr>
 		<tr>
-			<td><form:select path="languageId" style="width:205px">
+			<td><form:select path="certificationId" style="width:205px">
 				<form:option label="--Select One--" value="-1" />
-				<form:options items="${languagelist}" itemLabel="languageName"
-					itemValue="languageId" />
+				<form:options items="${certificationlist}" itemLabel="certificationName"
+					itemValue="certificationId" />
 			</form:select></td>
 		</tr>
 		<tr>

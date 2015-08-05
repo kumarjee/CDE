@@ -20,16 +20,16 @@
 </div>
 <br>
 <br>
- <form:form commandName="language"   action="searchquestion.html" >
+ <form:form commandName="certification"   action="searchquestion.html" >
  <table style="padding-left: 100px;">
  <tr>
   <td>
    Select Certification:
   </td>
   <td>
-    <form:select path="languageId">
-     <form:option label="--Select Language--" value="-1" />
-     <form:options items="${languagelist}" itemLabel="languageName" itemValue="languageId" />     	
+    <form:select path="certificationId">
+     <form:option label="--Select certification--" value="-1" />
+     <form:options items="${certificationlist}" itemLabel="certificationName" itemValue="certificationId" />     	
     </form:select>  
   </td>
  </tr>

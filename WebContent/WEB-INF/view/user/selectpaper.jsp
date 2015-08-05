@@ -18,16 +18,16 @@
 </div>
 <br>
 <br>
- <form:form commandName="language"   action="selectpaper.html" >
+ <form:form commandName="certification"   action="selectpaper.html" >
  <table align="center" >
  <tr>
   <td>
    Select Paper:
   </td>
   <td>
-    <form:select path="languageId">
-     <form:option label="--Select Language--" value="-1" />
-     <form:options items="${languagelist}" itemLabel="languageName" itemValue="languageId" />     	
+    <form:select path="certificationId">
+     <form:option label="--Select certification--" value="-1" />
+     <form:options items="${certificationlist}" itemLabel="certificationName" itemValue="certificationId" />     	
     </form:select>  
   </td>
  </tr>

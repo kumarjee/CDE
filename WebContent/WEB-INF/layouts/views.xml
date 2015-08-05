@@ -24,6 +24,10 @@
 	    <put-attribute name="body"	value="/WEB-INF/view/admin/uploadquestion.jsp" />
 	</definition>
 	
+	<definition name="/admin/addCertification" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/admin/addCertification.jsp" />
+	</definition>
+	
 	<definition name="admin/questionlist" extends="DefaultTemplate">
 	    <put-attribute name="body"	value="/WEB-INF/view/admin/questionlist.jsp" />
 	</definition>

@@ -33,7 +33,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 		<property name="annotatedClasses">
 			<list>
 				<value>com.infosys.internal.cde.model.User</value>
-				<value>com.infosys.internal.cde.model.Language</value>
+				<value>com.infosys.internal.cde.model.Certification</value>
 				<value>com.infosys.internal.cde.model.Questions</value>
 				<value>com.infosys.internal.cde.model.QuestionOptions</value>
 				<value>com.infosys.internal.cde.model.Admin</value>

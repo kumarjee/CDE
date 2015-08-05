@@ -27,7 +27,7 @@
 <table style="display: block;" >
  <tr style="border-bottom: 3px;">
    <th width="30%" align="left">
-     <core:out value="Language"></core:out>
+     <core:out value="Certification"></core:out>
    </th>
    <th width="30%" align="left">
      <core:out value="Question"></core:out>
@@ -53,7 +53,7 @@
  </tr>
 <core:forEach var="questionPaperCommand" items="${allQuestionList}" >
      <tr> 
-       <td><core:out value="${questionPaperCommand.languageName}"></core:out></td>      
+       <td><core:out value="${questionPaperCommand.certificationName}"></core:out></td>      
        <td  >
          <a href="addquestion.html?questionId=${questionPaperCommand.questionId}" >
              <core:out value="${questionPaperCommand.question}" ></core:out>
@@ -67,7 +67,7 @@
            <core:out value="${questionPaperCommand.rightAnswer}"></core:out> 
        </td>
        <td>
-         <a href="deletequestion.html?questionId=${questionPaperCommand.questionId}&languageId=${languageId}" >
+         <a href="deletequestion.html?questionId=${questionPaperCommand.questionId}&certificationId=${certificationId}" >
              <core:out value="Delete"></core:out>
          </a>
        </td>                      
