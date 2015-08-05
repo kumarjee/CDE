@@ -26,7 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.infosys.internal.cde.model.Questions;
-import com.infosys.internal.cde.service.LanguageService;
+import com.infosys.internal.cde.service.CertificationService;
 import com.infosys.internal.cde.utils.ExcelUtil;
 import com.infosys.internal.cde.validators.AddQuestionForm;
 import com.infosys.internal.cde.validators.UploadQuestionForm;
@@ -36,7 +36,7 @@ import com.infosys.internal.cde.validators.UploadQuestionForm;
 public class UploadQuestionController {
 	
 	@Autowired
-	private LanguageService languageService;
+	private CertificationService certificationService;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView showUploadQuestion(Map model, HttpSession session) {	
@@ -51,7 +51,7 @@ public class UploadQuestionController {
 		
 		model.put("pageHeading", pageHeading);
 		model.put("uploadQuestionForm", uploadQuestionForm);
-		model.put("languagelist", languageService.listLanguages());
+		model.put("certificationlist", certificationService.listCertifications());
 		
 		return new ModelAndView("/admin/uploadquestion");
 	}
@@ -88,7 +88,7 @@ public class UploadQuestionController {
 	                		return null;
 	                	}
 	                }
-	                questions.setLanguageId(uploadQuestionForm.getLanguageId());
+	                questions.setCertificationId(uploadQuestionForm.getCertificationId());
 	               	questions.setQuestion(row.getCell(0).toString());
 	               	questions.setRightOption((long)row.getCell(4).getNumericCellValue());
 	               	

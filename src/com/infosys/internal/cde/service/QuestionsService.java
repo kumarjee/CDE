@@ -7,7 +7,7 @@ import com.infosys.internal.cde.model.Questions;
 public interface QuestionsService {
 	public List<Questions> listQuestions();
 
-	public List<Questions> getQuestionsByLanguageId(Long languageId);
+	public List<Questions> getQuestionsByCertificationId(Long certificationId);
 
 	public List<Questions> getQuestionsByQuestionId(Long questionId);
 
@@ -17,7 +17,7 @@ public interface QuestionsService {
 
 	public void deleteQuestions(Questions questions);
 
-	public List<Questions> getTenRandomQuestionsByLanguageId(Long languageId);
+	public List<Questions> getTenRandomQuestionsByCertificationId(Long certificationId);
 	
 	public void uploadQuestions(List<Questions> questions);
 

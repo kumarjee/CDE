@@ -13,8 +13,8 @@ public class AddQuestionValidator{
 	   
 	   public void validate(Object target, Errors errors){
 		      AddQuestionForm addQuestionForm = (AddQuestionForm) target;
-		      if(addQuestionForm.getLanguageId()==-1){
-		    	  errors.rejectValue("languageId","NotEmpty.addQuestionForm.languageId","Select Language.");
+		      if(addQuestionForm.getCertificationId()==-1){
+		    	  errors.rejectValue("certificationId","NotEmpty.addQuestionForm.certificationId","Select certification.");
 		       }
 		      if(addQuestionForm.getRightOption()==null){
 		    	  errors.rejectValue("rightOption","selectRightAnswer.addQuestionForm.rightOption","Select Right Answer.");

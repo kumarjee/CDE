@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.infosys.internal.cde.model.Language;
+import com.infosys.internal.cde.model.Certification;
 import com.infosys.internal.cde.model.QuestionOptions;
 import com.infosys.internal.cde.model.Questions;
-import com.infosys.internal.cde.service.LanguageService;
+import com.infosys.internal.cde.service.CertificationService;
 import com.infosys.internal.cde.service.QuestionOptionsService;
 import com.infosys.internal.cde.service.QuestionsService;
 import com.infosys.internal.cde.validators.QuestionPaperCommand;
@@ -29,7 +29,7 @@ public class QuestionListController {
 	@Autowired
 	private QuestionOptionsService questionOptionsService;
 	@Autowired
-	private LanguageService languageService;
+	private CertificationService certificationService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView showQuestionList(Map model, HttpServletRequest request,
@@ -40,11 +40,11 @@ public class QuestionListController {
 		List allQuestionList = new ArrayList();
 		List questionlist = new ArrayList();
 
-		String languageIdInString = request.getParameter("languageId");
-		if (languageIdInString != null && (!languageIdInString.equals(""))) {
-			questionlist = questionsService.getQuestionsByLanguageId(Long
-					.parseLong(languageIdInString));
-			model.put("languageId", Long.parseLong(languageIdInString));
+		String certificationIdInString = request.getParameter("certificationId");
+		if (certificationIdInString != null && (!certificationIdInString.equals(""))) {
+			questionlist = questionsService.getQuestionsByCertificationId(Long
+					.parseLong(certificationIdInString));
+			model.put("certificationId", Long.parseLong(certificationIdInString));
 		} else {
 			questionlist = questionsService.listQuestions();
 		}
@@ -57,12 +57,12 @@ public class QuestionListController {
 			questionPaperCommand.setQuestionId(questions.getQuestionId());
 			questionPaperCommand.setQuestion(questions.getQuestion());
 
-			List languagelist = languageService
-					.getLanguageByLanguageId(questions.getLanguageId());
-			if (languagelist != null && languagelist.size() > 0) {
-				Language language = (Language) languagelist.get(0);
+			List certificationlist = certificationService
+					.getCertificationByCertificationId(questions.getCertificationId());
+			if (certificationlist != null && certificationlist.size() > 0) {
+				Certification certification = (Certification) certificationlist.get(0);
 				questionPaperCommand
-						.setLanguageName(language.getLanguageName());
+						.setCertificationName(certification.getCertificationName());
 			}
 
 			questionOptionsList = questionOptionsService

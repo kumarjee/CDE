@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.infosys.internal.cde.model.Admin;
 import com.infosys.internal.cde.model.QuestionOptions;
 import com.infosys.internal.cde.model.Questions;
-import com.infosys.internal.cde.service.LanguageService;
+import com.infosys.internal.cde.service.CertificationService;
 import com.infosys.internal.cde.service.QuestionOptionsService;
 import com.infosys.internal.cde.service.QuestionsService;
 import com.infosys.internal.cde.validators.AddQuestionForm;
@@ -28,7 +28,7 @@ import javax.validation.Valid;
 public class AddQuestionController {
 
 	@Autowired
-	private LanguageService languageService;
+	private CertificationService certificationService;
     @Autowired
 	private AddQuestionValidator addQuestionValidator;
 	@Autowired
@@ -56,7 +56,7 @@ public class AddQuestionController {
 			if (questionlist != null && questionlist.size() > 0) {
 				Questions questions = (Questions) questionlist.get(0);
 				addQuestionForm.setQuestionId(questions.getQuestionId());
-				addQuestionForm.setLanguageId(questions.getLanguageId());
+				addQuestionForm.setCertificationId(questions.getCertificationId());
 				addQuestionForm.setQuestion(questions.getQuestion());
 
 				List questionoptionslist = questionOptionsService
@@ -102,7 +102,7 @@ public class AddQuestionController {
 		}
 		model.put("pageHeading", pageHeading);
 		model.put("addQuestionForm", addQuestionForm);
-		model.put("languagelist", languageService.listLanguages());
+		model.put("certificationlist", certificationService.listCertifications());
 		return "/admin/addquestion";
 	}
 
@@ -120,12 +120,12 @@ public class AddQuestionController {
 		// check all error
 		if (result.hasErrors()) {
 			model.put("pageHeading", pageHeading);
-			model.put("languagelist", languageService.listLanguages());
+			model.put("certificationlist", certificationService.listCertifications());
 			ModelAndView modelandview = new ModelAndView();
 			return new ModelAndView("/admin/addquestion");
 		} else {
 			Questions questions = new Questions();
-			questions.setLanguageId(addQuestionForm.getLanguageId());
+			questions.setCertificationId(addQuestionForm.getCertificationId());
 			questions.setQuestion(addQuestionForm.getQuestion());
 			// Add Question and Answer
 			if (addQuestionForm.getQuestionId() == null) {

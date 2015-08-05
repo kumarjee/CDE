@@ -2,7 +2,7 @@ package com.infosys.internal.cde.validators;
 
 public class QuestionPaperCommand {
 	private Long questionId;
-	private String languageName;
+	private String certificationName;
 	private String question;
 	private Long option1Id;
 	private String option1;
@@ -22,11 +22,11 @@ public class QuestionPaperCommand {
 		   return questionId;
 	  }	
 	
-	public void setLanguageName(String languageName){
-		   this.languageName = languageName;
+	public void setCertificationName(String certificationName){
+		   this.certificationName = certificationName;
      }
-	public String getLanguageName(){
-		   return languageName;
+	public String getCertificationName(){
+		   return certificationName;
      }
 	
 	public void setQuestion(String question){

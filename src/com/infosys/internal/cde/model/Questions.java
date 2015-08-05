@@ -19,8 +19,8 @@ public class Questions {
 	@Column(name = "ques_id")
 	private Long questionId;
 
-	@Column(name = "lang_id")
-	private Long languageId;
+	@Column(name = "cert_id")
+	private Long certificationId;
 
 	@Column(name = "question")
 	private String question;
@@ -36,12 +36,12 @@ public class Questions {
 		return questionId;
 	}
 
-	public void setLanguageId(Long languageId) {
-		this.languageId = languageId;
+	public void setCertificationId(Long certificationId) {
+		this.certificationId = certificationId;
 	}
 
-	public Long getLanguageId() {
-		return languageId;
+	public Long getCertificationId() {
+		return certificationId;
 	}
 
 	public void setQuestion(String question) {

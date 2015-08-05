@@ -24,8 +24,8 @@ public class QuestionsServiceImpl implements QuestionsService {
 	 }
 	
 	@Override
-	public List<Questions> getQuestionsByLanguageId(Long languageId){
-		   return questionsDao.getQuestionsByLanguageId(languageId);		
+	public List<Questions> getQuestionsByCertificationId(Long certificationId){
+		   return questionsDao.getQuestionsByCertificationId(certificationId);		
 	  }
 	
 	@Override
@@ -49,8 +49,8 @@ public class QuestionsServiceImpl implements QuestionsService {
 	 }
 	
 	@Override
-	public List<Questions> getTenRandomQuestionsByLanguageId(Long languageId){
-		return questionsDao.getTenRandomQuestionsByLanguageId(languageId);  
+	public List<Questions> getTenRandomQuestionsByCertificationId(Long certificationId){
+		return questionsDao.getTenRandomQuestionsByCertificationId(certificationId);  
 	 }
 
 	@Override

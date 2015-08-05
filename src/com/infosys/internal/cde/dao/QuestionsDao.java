@@ -8,7 +8,7 @@ import com.infosys.internal.cde.model.User;
 public interface QuestionsDao {
 	public List<Questions> listQuestions();
 
-	public List<Questions> getQuestionsByLanguageId(Long languageId);
+	public List<Questions> getQuestionsByCertificationId(Long certificationId);
 
 	public List<Questions> getQuestionsByQuestionId(Long questionId);
 
@@ -18,7 +18,7 @@ public interface QuestionsDao {
 
 	public void deleteQuestions(Questions questions);
 
-	public List<Questions> getTenRandomQuestionsByLanguageId(Long languageId);
+	public List<Questions> getTenRandomQuestionsByCertificationId(Long certificationId);
 	
 	public void uploadQuestions(List<Questions> questions);
 }

@@ -4,16 +4,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class UploadQuestionForm {
 	
-	private Long languageId;
+	private Long certificationId;
 	
 	private MultipartFile file;
 
-	public Long getLanguageId() {
-		return languageId;
+	public Long getCertificationId() {
+		return certificationId;
 	}
 
-	public void setLanguageId(Long languageId) {
-		this.languageId = languageId;
+	public void setCertificationId(Long certificationId) {
+		this.certificationId = certificationId;
 	}
 
 	public MultipartFile getFile() {
