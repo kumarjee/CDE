@@ -103,7 +103,7 @@ public class UserServiceImpl implements UserService {
 
 	public String generateActivationURL(User user) {
 		// TODO Auto-generated method stub
-		return "http://localhost:8090/CDE/forms/user/userconfirmation.html?&token="+user.getRandom();
+		return "http://localhost:8080/CDE/forms/user/userconfirmation.html?&token="+user.getRandom();
 	}
 
 	@Override
