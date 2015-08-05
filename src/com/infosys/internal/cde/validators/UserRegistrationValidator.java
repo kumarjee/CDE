@@ -37,6 +37,10 @@ public class UserRegistrationValidator {
 				  errors.rejectValue("userEmail", "matchUserEmail.memberForm.userEmail", "User Email already exist.");
 				}
 			 }
+			if(!userService.ValidateEmailDomain(userForm.getUserEmail())){
+				 errors.rejectValue("userEmail", "userDomain.memberForm.userEmail", "Cisco and Infosys domains are accepted. Please enter a valid Email");
+			}
+			
 	      }
 		// check userEmail errors.....End.............................
 		if((userForm.getUserGender()).equals("-1")){

@@ -41,4 +41,22 @@ public class UserDaoImpl implements UserDao {
 						password).list();
 	}
 
+	@Override
+	public List<User> getStatusOfUser(String userEmail) {
+		// TODO Auto-generated method stub
+		return sessionFactory.getCurrentSession().createQuery(
+				"from User where status='Y' and userEmail=:userEmail")
+				.setString("userEmail", userEmail).list();
+	}
+
+	@Override
+	public void activateUser(int token) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().createSQLQuery("update user set status='Y' where random =:token").setInteger("token", token)
+		.executeUpdate();
+		
+	}
+
+		
+
 }

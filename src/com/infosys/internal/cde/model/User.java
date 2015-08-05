@@ -36,6 +36,13 @@ public class User {
 
 	@Column(name = "address")
 	private String address;
+	
+	//added to find activation status of user
+	@Column(name ="status")
+	private String status;
+	
+	@Column(name="random")
+	private int random;
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
@@ -91,5 +98,21 @@ public class User {
 
 	public String getAddress() {
 		return address;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public int getRandom() {
+		return random;
+	}
+
+	public void setRandom(int random) {
+		this.random = random;
 	}
 }

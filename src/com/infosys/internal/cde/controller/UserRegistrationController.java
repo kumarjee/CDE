@@ -14,6 +14,7 @@ import com.infosys.internal.cde.validators.UserForm;
 import com.infosys.internal.cde.validators.UserRegistrationValidator;
 
 import java.util.Map;
+import java.util.Random;
 
 import javax.validation.Valid;
 
@@ -35,13 +36,15 @@ public class UserRegistrationController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView processUserLogin(@Valid UserForm userForm,
-			BindingResult result, Map model) {
+	public ModelAndView processUserLogin(@Valid UserForm userForm, BindingResult result, Map model) {
+		
 		userRegistrationValidator.validate(userForm, result);
 
 		if (result.hasErrors()) {
 			return new ModelAndView("/user/userregistration");
 		} else {
+			
+			Random random = new Random();
 
 			// set userForm value to user object.
 			User user = new User();
@@ -51,9 +54,13 @@ public class UserRegistrationController {
 			user.setUserGender(userForm.getUserGender());
 			user.setPhoneNo(userForm.getPhoneNo());
 			user.setAddress(userForm.getAddress());
+			user.setStatus("N");
+			user.setRandom(random.nextInt());
 
 			userService.saveUser(user);
+			userService.sendActivationMail(user);
+			return new ModelAndView("redirect:userlogin.html");
 		}
-		return new ModelAndView("redirect:userlogin.html");
+		
 	}
 }

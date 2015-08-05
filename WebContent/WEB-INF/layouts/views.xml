@@ -52,4 +52,8 @@
 	    <put-attribute name="body"	value="/WEB-INF/view/user/userregistration.jsp" />
 	</definition>
 	
+		<definition name="userconfirm" extends="LoginTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/user/userconfirm.jsp" />
+	</definition>
+	
 </tiles-definitions>

@@ -29,9 +29,15 @@ public class UserLoginValidator {
 
 		if ((user.getUserEmail() != null) && (user.getUserEmail().length() > 0)) {
 			user.setUserEmail(user.getUserEmail().trim());
-			List userlist = userService.validateLoginUser(user.getUserEmail(),Encryption.encrypt(user.getPassword())
-					);
+			List userlist = userService.validateLoginUser(user.getUserEmail(),Encryption.encrypt(user.getPassword()));
 			if ((userlist != null) && (userlist.size() > 0)) {
+				List status = userService.getStatusOfUser(user.getUserEmail());
+				if ((status != null) && status.size() >0) {
+				} else {
+					errors.rejectValue("userEmail",
+							"notActivated.user.userEmail",
+							"Account is not yet activated. Please activate the account by clicking on link provided in activation mail");
+				}
 			} else {
 				errors.rejectValue("userEmail",
 						"notMatchEmailAndPassword.user.userEmail",

@@ -6,6 +6,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function(){
+	$("input").on("keydown", function(){
+		if($("span").length>0){
+			$("span").remove();
+		}
+		
+	});
+	
+	$("input[type=submit]").on("click", function(){
+		if($("span").length<0){
+			alert("User Registered Successfully. Please Activate the account by clicking on the url provided in actiavtion mail.");
+		}
+	});
+});
+</script>
 </head>
 <body>
  <h2 align="center" >User Registration</h2>
