@@ -42,10 +42,7 @@ public class UserRegistrationValidator {
 			}
 			
 	      }
-		// check userEmail errors.....End.............................
-		if((userForm.getUserGender()).equals("-1")){
-		   errors.rejectValue("userGender", "select.userForm.userGender","Select Gender." );
-		 }
+		// check userEmail errors.....End............................
 		if(!(userForm.getPassword()).equals(userForm.getConfirmPassword())){
 		  errors.rejectValue("password", "matchpassword.userForm.password","Password and Confirm Password do not match." );
 		 }

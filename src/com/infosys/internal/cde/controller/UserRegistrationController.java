@@ -51,7 +51,6 @@ public class UserRegistrationController {
 			user.setUserName(userForm.getUserName());
 			user.setUserEmail(userForm.getUserEmail());
 			user.setPassword(Encryption.encrypt(userForm.getPassword()));
-			user.setUserGender(userForm.getUserGender());
 			user.setPhoneNo(userForm.getPhoneNo());
 			user.setAddress(userForm.getAddress());
 			user.setStatus("N");
@@ -59,7 +58,7 @@ public class UserRegistrationController {
 
 			userService.saveUser(user);
 			userService.sendActivationMail(user);
-			return new ModelAndView("redirect:userlogin.html");
+			return new ModelAndView("userregconfirm");
 		}
 		
 	}

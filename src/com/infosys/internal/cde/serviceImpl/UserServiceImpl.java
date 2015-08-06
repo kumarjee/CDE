@@ -1,5 +1,7 @@
 package com.infosys.internal.cde.serviceImpl;
 
+import java.io.File;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 import java.util.Properties;
@@ -8,6 +10,7 @@ import java.util.Random;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
+import javax.activation.URLDataSource;
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -81,12 +84,17 @@ public class UserServiceImpl implements UserService {
 			message.setSubject("CDE Account Confirmation");
 			String htmlText ="Hi "+user.getUserName()+","+"<br><br>"+"You just signed up for CDE. Please follow this link to confirm that this is your e-mail address."+"<br><br>";
 			htmlText = htmlText +"<a href="+url+"><button type='button'>Activate your account</button></a>";
-		//	htmlText = htmlText+"<input type='button' onclick='location.href='"+url+"value='Activate you Account' />";
 			htmlText = htmlText+"<br><br><br>"+"Thanks,"+"<br>"+"CDE Team."+"<br><br><img width=200 Height=50 src=\"cid:image\">";
 			messageBodyPart.setContent(htmlText, "text/html");
 			multipart.addBodyPart(messageBodyPart);
 			messageBodyPart = new MimeBodyPart();
-	        DataSource fds = new FileDataSource("C:/Users/smandara/Downloads/download2.png");
+	       String fileName = "/download2.png";
+			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+			if (classLoader == null) {
+			    classLoader = this.getClass().getClassLoader();
+			}
+
+			DataSource fds = new FileDataSource(new File(classLoader.getResource(fileName).toURI()));
 	        messageBodyPart.setDataHandler(new DataHandler(fds));
 	        messageBodyPart.setHeader("Content-ID","<image>");
 	        multipart.addBodyPart(messageBodyPart);
@@ -96,6 +104,8 @@ public class UserServiceImpl implements UserService {
 			System.out.println("Mail sent successfully!!!!!!!!");
 
 		} catch (MessagingException e) {
+			e.printStackTrace();
+		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
 

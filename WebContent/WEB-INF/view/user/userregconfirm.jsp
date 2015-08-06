@@ -24,20 +24,15 @@
 <body>
 <div>
 <a href="<%=request.getContextPath()%>" class="right" style="background-image: url(<%= request.getContextPath()%>/resources/images/HomePage_Logo.png);">  </a>
-</div><br>
-<form:form commandName="user" action="userconfirm.html" >
+</div>
+<br>
+<form:form commandName="user" action="userregconfirm.html" >
 <table>
 <tr>
 <td>
-<h3>User Account activated....</h3>
+<h3>Registration Successful.</h3><br>
+Activation link sent to registered e-mail id. Please activate your account by confirming the email address.
 </td>
-</tr>
-<tr>
-<td>Please login Here</td>
-<td>
-      <!-- <input type="submit" value="Login"/> --> 
-      <font color="white" face="verdana" size="2.9"> <a href="userlogin.jsp"><Input type="button" value = "Login"/></a></font>
-    </td>
 </tr>
 </table>
 </form:form>

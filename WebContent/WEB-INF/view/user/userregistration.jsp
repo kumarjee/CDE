@@ -15,12 +15,6 @@ $(document).ready(function(){
 		}
 		
 	});
-	
-	$("input[type=submit]").on("click", function(){
-		if($("span").length<0){
-			alert("User Registered Successfully. Please Activate the account by clicking on the url provided in actiavtion mail.");
-		}
-	});
 });
 </script>
 </head>
@@ -68,7 +62,7 @@ $(document).ready(function(){
      <td>
        <form:password path="confirmPassword" size="26" />
     </tr>
-    </tr>    
+   <%--  </tr>    
      <td>
        <form:label path="userGender">Select Gender:</form:label>
        <FONT color="red"><form:errors path="userGender" /></FONT>
@@ -82,7 +76,7 @@ $(document).ready(function(){
         <form:option label="Female" value="F" />     	
        </form:select>
      </td>  
-    </tr>     
+    </tr>    --%>  
     <tr>
      <td>
       <form:label path="phoneNo">phone No:</form:label>

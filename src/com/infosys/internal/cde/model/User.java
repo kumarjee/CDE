@@ -28,9 +28,6 @@ public class User {
 	@Column(name = "password")
 	private String password;
 
-	@Column(name = "gender")
-	private String userGender;
-
 	@Column(name = "phone_no")
 	private String phoneNo;
 
@@ -76,13 +73,6 @@ public class User {
 		return password;
 	}
 
-	public void setUserGender(String userGender) {
-		this.userGender = userGender;
-	}
-
-	public String getUserGender() {
-		return userGender;
-	}
 
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;

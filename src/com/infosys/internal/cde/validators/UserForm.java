@@ -20,7 +20,6 @@ public class UserForm{
 	@Size(min=6,max=20)	
 	private String password;
 	private String confirmPassword;
-	private String userGender;
 	
 	@Size(min=10,max=20)
 	private String phoneNo;
@@ -59,13 +58,6 @@ public class UserForm{
 	 }
 	public String getConfirmPassword(){
 		  return confirmPassword;
-	}
-	
-	public void setUserGender(String userGender){
-		   this.userGender=userGender;
-	 }
-	public String getUserGender(){
-		  return userGender;
 	}
 	
 	public void setPhoneNo(String phoneNo){
