@@ -36,7 +36,7 @@ public class AddCertificationController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String showAddCertificationController(Map model, HttpServletRequest request,
 			HttpSession session) {
-		if ((session.getAttribute("adminEmail")) == null) {
+			if ((session.getAttribute("adminEmail")) == null) {
 			Admin admin = new Admin();
 			model.put("admin", admin);
 			return "/admin/adminlogin";
@@ -53,7 +53,7 @@ public class AddCertificationController {
 	public ModelAndView processAddCertificationController(
 			@Valid AddCertificationForm addCertification, BindingResult result,
 			Map model, HttpSession session) {
-		if ((session.getAttribute("adminEmail")) == null) {
+			if ((session.getAttribute("adminEmail")) == null) {
 			return new ModelAndView("redirect:adminlogin.html");
 		}
 		addCertificationValidator.validate(addCertification, result);

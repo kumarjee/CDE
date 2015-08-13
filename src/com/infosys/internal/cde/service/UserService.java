@@ -2,6 +2,7 @@ package com.infosys.internal.cde.service;
 
 import java.util.List;
 
+import com.infosys.internal.cde.model.Results;
 import com.infosys.internal.cde.model.User;
 
 public interface UserService {
@@ -21,6 +22,8 @@ public interface UserService {
 	public List<User> getStatusOfUser(String userEmail);
 
 	public void activateUser(int random);
+
+	public List<Results> getExamHistoryOfUser(String userEmail);
 
 	
 }

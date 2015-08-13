@@ -41,6 +41,7 @@ public class SelectPaperController {
 			return new ModelAndView("redirect:userlogin.html");
 		}
 		Long certificationId = certification.getCertificationId();
+		System.out.println("certificationId in select paper control :: "+certificationId);
 		if (certificationId == -1) {
 			model.put("certificationlist", certificationService.listCertifications());
 			model.put("errormessage", "Select certification");

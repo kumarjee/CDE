@@ -3,6 +3,7 @@ package com.infosys.internal.cde.dao;
 import java.util.List;
 
 import com.infosys.internal.cde.model.Questions;
+import com.infosys.internal.cde.model.Results;
 import com.infosys.internal.cde.model.User;
 
 public interface QuestionsDao {
@@ -21,4 +22,6 @@ public interface QuestionsDao {
 	public List<Questions> getTenRandomQuestionsByCertificationId(Long certificationId);
 	
 	public void uploadQuestions(List<Questions> questions);
+	
+	public void saveResultForUSer(Results results);
 }

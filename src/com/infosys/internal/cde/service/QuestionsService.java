@@ -3,6 +3,7 @@ package com.infosys.internal.cde.service;
 import java.util.List;
 
 import com.infosys.internal.cde.model.Questions;
+import com.infosys.internal.cde.model.Results;
 
 public interface QuestionsService {
 	public List<Questions> listQuestions();
@@ -21,4 +22,5 @@ public interface QuestionsService {
 	
 	public void uploadQuestions(List<Questions> questions);
 
+	public void saveResultForUSer(Results results);
 }

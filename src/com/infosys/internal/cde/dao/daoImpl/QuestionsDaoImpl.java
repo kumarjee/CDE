@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.infosys.internal.cde.dao.QuestionsDao;
 import com.infosys.internal.cde.model.Questions;
+import com.infosys.internal.cde.model.Results;
 
 @Repository("questionsDao")
 public class QuestionsDaoImpl implements QuestionsDao {
@@ -78,5 +79,11 @@ public class QuestionsDaoImpl implements QuestionsDao {
 	public void uploadQuestions(List<Questions> questions) {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	@Override
+	public void saveResultForUSer(Results results) {
+		sessionFactory.getCurrentSession().save(results);
 	}
 }

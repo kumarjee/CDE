@@ -19,7 +19,7 @@
 	
 	<definition name="ExtendedTemplate" template="/WEB-INF/view/template/SiteTemplateExtended.jsp">
 		<put-attribute name="header" value="/WEB-INF/view/template/header.jsp" />
-		<put-attribute name="menu" value="/WEB-INF/view/template/menu.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/view/template/usermenu.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp" />
 	</definition>

@@ -9,7 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.infosys.internal.cde.dao.QuestionsDao;
 import com.infosys.internal.cde.model.Questions;
+import com.infosys.internal.cde.model.Results;
 import com.infosys.internal.cde.service.QuestionsService;
+import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 
 @Service("questionsService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -58,4 +60,9 @@ public class QuestionsServiceImpl implements QuestionsService {
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public void saveResultForUSer(Results results) {
+		questionsDao.saveResultForUSer(results);
+	}
+	 
 }

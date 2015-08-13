@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.infosys.internal.cde.dao.UserDao;
+import com.infosys.internal.cde.model.Results;
 import com.infosys.internal.cde.model.User;
 
 @Repository("userDao")
@@ -55,6 +56,14 @@ public class UserDaoImpl implements UserDao {
 		sessionFactory.getCurrentSession().createSQLQuery("update user set status='Y' where random =:token").setInteger("token", token)
 		.executeUpdate();
 		
+	}
+
+	@Override
+	public List<Results> getResultOfUser(String userEmail) {
+		// TODO Auto-generated method stub
+		return sessionFactory.getCurrentSession().createQuery(
+				"from Results where user=:userEmail")
+				.setString("userEmail", userEmail).list();
 	}
 
 		

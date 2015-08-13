@@ -19,10 +19,10 @@ public class Certification {
 	@Column(name = "certification_name")
 	private String certificationName;
 
-	@Column(name="exam_pattern")
+	@Column(name = "exam_pattern")
 	private String examPattern;
-	
-	@Column(name="business_line")
+
+	@Column(name = "business_line")
 	private String businessLine;
 
 	public String getCertificationName() {
@@ -56,6 +56,5 @@ public class Certification {
 	public void setCertificationId(Long certificationId) {
 		this.certificationId = certificationId;
 	}
-	
-	
+
 }

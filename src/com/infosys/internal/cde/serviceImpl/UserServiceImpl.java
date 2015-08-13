@@ -28,6 +28,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.infosys.internal.cde.dao.UserDao;
+import com.infosys.internal.cde.model.Results;
 import com.infosys.internal.cde.model.User;
 import com.infosys.internal.cde.service.UserService;
 
@@ -136,5 +137,11 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		userDao.activateUser(token);
 		
+	}
+
+	@Override
+	public List<Results> getExamHistoryOfUser(String userEmail) {
+		// TODO Auto-generated method stub
+		return userDao.getResultOfUser(userEmail);
 	}
 }

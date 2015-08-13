@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.List;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -100,6 +101,7 @@ public class QuestionPaperController {
 			}
 		}
 		session.setAttribute("questonIdList", questonIdList);
+		session.setAttribute("certificationId",certificationIdInString);
 		model.put("questionPaperList", questionPaperList);
 		return "/user/questionpaper";
 	}
@@ -108,6 +110,8 @@ public class QuestionPaperController {
 	public ModelAndView processQuestionPaper(Map model,
 			HttpServletRequest request, HttpSession session) {
 		String[] question = request.getParameterValues("question");
+		String certificationIdInString =(String) session.getAttribute("certificationId");
+		System.out.println("certificationIdInString in paper controller :: "+certificationIdInString);
 		int rightAnswer = 0;
 		for (int i = 0; i < question.length; i++) {
 			if (request.getParameter("quesNum[" + i + "]") != null
@@ -130,6 +134,7 @@ public class QuestionPaperController {
 				}
 			}
 		}
+		//session.setAttribute("certificationId",certificationIdInString);
 		session.setAttribute("totalQuestion", question.length);
 		session.setAttribute("rightAnswer", rightAnswer);
 		session.setAttribute("wongAnswer", (question.length) - rightAnswer);

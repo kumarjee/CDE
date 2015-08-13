@@ -36,15 +36,15 @@
 	    <put-attribute name="body"	value="/WEB-INF/view/admin/searchquestion.jsp" />
 	</definition>
 	
-	<definition name="/user/selectpaper" extends="LoginTemplate">
+	<definition name="/user/selectpaper" extends="ExtendedTemplate">
 	    <put-attribute name="body"	value="/WEB-INF/view/user/selectpaper.jsp" />
 	</definition>
 	
-	<definition name="/user/questionpaper" extends="LoginTemplate">
+	<definition name="/user/questionpaper" extends="ExtendedTemplate">
 	    <put-attribute name="body"	value="/WEB-INF/view/user/questionpaper.jsp" />
 	</definition>
 	
-	<definition name="/user/questionpaperresult" extends="LoginTemplate">
+	<definition name="/user/questionpaperresult" extends="ExtendedTemplate">
 	    <put-attribute name="body"	value="/WEB-INF/view/user/questionpaperresult.jsp" />
 	</definition>
 	
@@ -58,6 +58,10 @@
 	
 	<definition name="userregconfirm" extends="LoginTemplate">
 	    <put-attribute name="body"	value="/WEB-INF/view/user/userregconfirm.jsp" />
+	</definition>
+	
+	<definition name="/user/UserResultHistory" extends="ExtendedTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/view/user/UserResultHistory.jsp" />
 	</definition>
 	
 </tiles-definitions>
